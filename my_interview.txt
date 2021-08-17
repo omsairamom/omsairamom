@@ -1,0 +1,136 @@
+Midland Credit Management Gurgao
+-----------------------------------------
+
+1) OOPS Concept
+
+Collection 
+-------------------------------------------
+2) Java Hashmap store same object as key
+3) Java Hashmap store same value? Is there any concurrency?
+
+   What is Set
+   .equal method(Parameter parameter)
+
+4) SQL query for same manager employee code 
+https://learnsql.com/blog/count-join-sql/
+
+5) Sprigg bean scope
+https://www.tutorialspoint.com/spring/spring_bean_scopes.htm
+
+6) Lambda triggering point
+7) Map interface Collection
+8) Access Modifier
+9) Default access modifier
+10) Searialization where you do in Spring Boot on which layer?
+11) The Object class is the parent class of all the classes in java
+12) Stored Procedure
+
+
+
+SOPRA
+================================================
+Constructor 2 argument and default which call
+Incapsulation
+Abstraction
+Palindrome Sting int both
+Define project
+
+
+Cloud Container
+12 Factor
+Cloud Native Architecture Deployment
+New Relic , Splunk
+Docker
+Kubernetis
+cicd
+elastic beanstalk
+lambda fun aws
+SNS, SQS
+
+AWS Beanstack
+================================================
+
+Elastic Container Service used to deploy container in cloud. 
+
+Elastic Benstalk is a PAAS plateform as a service from Amazon.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12 Factors
+=============================================================
+
+1-Codebase - One codebase tracked in revision control, many deploys
+2-Dependencies - Explicitly declare and isolate dependencies
+3-Config - Store config in the environment
+4-Backing services - Treat backing services as attached resources
+5-Build, release, run - Strictly separate build and run stages
+6-Processes - Execute the app as one or more stateless processes
+7-Port binding - Export services via port binding
+8-Concurrency - Scale out via the process model
+9-Disposability - Maximize robustness with fast startup and graceful shutdown
+10-Development / Production Parity
+11-Logs - Treat logs as event streams
+12-Admin processes - Run admin/management tasks as one-off processes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

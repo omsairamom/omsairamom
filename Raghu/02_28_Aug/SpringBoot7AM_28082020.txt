@@ -1,0 +1,74 @@
+		    Date : 28-Aug-20
+		    Spring Boot 7AM
+	             Demo-Session-2
+		     Mr. RAGHU
+	---------------------------------------
+         Admin : Srikanth : +91 - 6302 968 665
+
+         https://www.facebook.com/groups/thejavatemple/
+	   email: javabyraghu@gmail.com
+
+Videos:
+https://www.youtube.com/watch?v=EA43S5R8LSc&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr
+
+Spring Core Session-1
+ https://www.youtube.com/watch?v=xusQhpQuODk&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=12
+Spring Core Session-2
+ https://www.youtube.com/watch?v=-FlszP92JVM&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=13
+
+ Pre Req:
+  Core Java (Good) | Adv Java Basic |
+  Hibernate/JPA basics | Spring (Core, JDBC, MVC)
+
+ Spring Boot and Microservices(Spring Cloud)
+ hr@nareshit.com
+ Duration : 3 months
+ Session  : 1hr 40 min [ 7:10 AM IST  ]
+ NO RECORDED SESSION | NOTES PDF | EXAMPLE CODE [Workspace]
+ Payment : 5000 INR /- 
+
+  Distributed Applications: Runs at multiple devices.
+
+  SBI Bank:
+   NetBanking
+   MobileApp
+   ATM
+   3rdParty(Google Pay)
+   IVR
+   ..etc
+
+  One BackEnd(Spring Boot) and Multiple FrontEnd Applications.
+
+  End-End Process (Development to Deployment)
+  
+  Maven/Gradle -> JARs, Executing Test cases, Plugins, Parent-Child,
+                   code -> JAR/WAR.
+
+  
+  CI/CD : CI-> Github -> Jenkins -> JAR/WAR
+          CD-> Jenkins -> Container System (Docker) -> CLOUD ENV
+
+  -----MS(Microservices)---------------------------------------------   
+  Project -> Modules 
+
+              Amazon
+   Search        Cart     Payment
+   Tracking     Invoice   Feedback
+   Returns      ...etc
+
+   All Modules -> 1 Project -> one WAR/JAR -> Monolithic Application
+
+
+   One module not working properly-> May effect full project
+   Scaling -> 
+     Horizontal Scaling : new instace
+     Vertical Scaling: improvide h/w capacity
+
+   Microservices: Decopuled Architecture
+
+   1 or multiple Modules as one Project
+
+   Search and Cart -> 1 Project
+   Payment and Return -> 1 Project
+=================================================================
+

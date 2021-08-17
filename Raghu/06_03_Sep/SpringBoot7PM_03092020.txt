@@ -1,0 +1,191 @@
+			Date : 03/09/2020
+			Spring Boot 7AM
+			  Mr. RAGHU
+	---------------------------------------------------
+	     Admin : Srikanth (+91 - 6302968665)
+	  Spring Boot ( Spring Concepts XML/Java/Annotation)
+Youtube Playlist:
+  https://www.youtube.com/watch?v=EA43S5R8LSc&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr
+		       javabyraghu@gmail.com
+	       https://www.facebook.com/groups/thejavatemple
+
+Maven Session Videos:
+https://www.youtube.com/watch?v=9eJAvApRAI0
+https://www.youtube.com/watch?v=jOykBjSl1X0
+https://www.youtube.com/watch?v=iLwuhbnFPqo
+
+Spring Boot Application-3 setup files
+a. Starter class : Create Spring container, start app.
+b. Input files   (2)
+c. Build information file
+
+Spring container inputs?2 
+Spring Bean (class) [Programmer defied + Pre-defined]
+Spring Configuration File (Java/Annotation**)
+
+Annotation:
+@Component
+@Value
+@Autowired
+
+Java
+@Configuration
+@Bean
+
+Q) How many types of Container exit in Spring/Spring Boot?
+A) 2 Types
+   Old Container - BeanFactory (XML COnfiguration)
+   New Container - ApplicationContext (XML/Java/Annotation config)
+=====================================================================
+Softwares setup:
+JDK : 8/11/14  (Latest-14)
+> Download JDK 
+  https://www.oracle.com/java/technologies/javase-jdk14-downloads.html
+> Click on OS based Link > Ex: jdk-14.0.2_windows-x64_bin.exe > Accept > Download
+> Double click > Next > Next > Finish.
+
+STS:-
+> Goto https://spring.io/tools
+> Click on OS based link (File downloaded as JAR)
+Ex: spring-tool-suite-4-4.7.1.RELEASE-e4.16.0-win32.win32.x86_64.self-extracting.jar
+> *** While downloading it may show [It may harm you system! Do you want to Download?]
+   Click on : YES.
+> Double click on this JAR > Extracted to a folder.
+> Open folder (ex: C:\Downloads\sts-4.7.1.RELEASE )
+> Click on Option 'SpringToolSuite4'
+> Enter workspace name [Folder name]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		Creating First Application in STS
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#1. Create Project
+> File > New > Spring Starter Project > Enter details
+
+ Name : SpringBoot2FirstApp
+ Java Version: 14
+
+> Next > Next > Finish
+
+(ctrl and +/-  for font size adjust)
+
+#2. Run application  (ctrl+F11 / ctrl+Fn+F11)
+
+> Open Starter class(main class)
+> Right click and Run as > Spring Boot Application
+
+------Coding PART-------------
+#3. Create one new class 
+> Right click on package name (com.example.demo) > new > class
+> Enter name. ex: MessageService.
+
+#4. code
+package com.example.demo;
+import org.springframework.stereotype.Component;
+//ctrl+shift+O (imports)
+@Component
+public class MessageService {
+
+	public void getMsg() {
+		System.out.println("FROM FIRST APP");
+	}
+}
+
+#5. Modified main class | Starter class
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class SpringBoot2FirstAppApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext ac = SpringApplication.run(SpringBoot2FirstAppApplication.class, args);
+		// read object (bean) using getBean(objName, ClassName.class)
+		MessageService ms = ac.getBean("messageService",MessageService.class);
+		ms.getMsg();
+	}
+
+}
+
+#6. Run application (ctrl+F11)
+> Right click on Main class > Run as > Spring Boot application.
+
+*) Note : Spring Bean(class), bean(object created inside container).
+
+=============================================================================
+		Creating First Application in Eclipse
+=============================================================================
+S#1
+Download Eclipse any Latest version:
+https://www.eclipse.org/downloads/packages/release/2020-09/m3
+https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2020-09/M3/eclipse-jee-2020-09-M3-win32-x86_64.zip
+> Click on Download
+> Download as ZIP
+> Extract to a folder
+Ex: C:\Downloads\eclipse
+
+> Click on eclipse option
+> Enter workspace(folder name)
+  ex: D:/myexamples
+
+S#2
+> ***(onetime setup)
+> Goto Help > Eclipse Market Place > Search with Spring Tool suite 
+> select Spring Tool 4 (aka Spring Tool Suite 4)
+> Click on INSTALL option > Next > Next > Finish
+
+> After success > close Eclipse and open again.
+
+S#3 Create one project
+Create Project
+> File > New > Spring Starter Project > Enter details
+ Name : SpringBoot2FirstApp
+ Java Version: 14
+> Next > Next > Finish
+
+#4. Write code
+
+package com.example.demo;
+
+//ctrl+shift+O
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("eob")
+public class EmpService {
+
+	@Value("NIT")
+	private String code;
+
+	// > Source Menu > Generate toString()
+	@Override
+	public String toString() {
+		return "EmpService [code=" + code + "]";
+	}
+	
+}
+
+#5. Modified starter class
+
+package com.example.demo;
+
+//ctrl+shft+O (imports)
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class SpringBoot2AppTestApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext ac = SpringApplication.run(SpringBoot2AppTestApplication.class, args);
+		EmpService es = ac.getBean("eob",EmpService.class);
+		System.out.println(es);
+	}
+
+}
+==============================================================================
+Q) What is toString() Explain it?
+A) 

@@ -1,0 +1,141 @@
+		Date: 02/09/2020
+		Spring Boot 7AM
+		  Mr. RAGHU
+	      javabyraghu@gmail.com
+	 https://www.facebook.com/groups/thejavatemple
+	    Admin: Srikanth 
+    	     ---------------------------
+All Videos:-
+https://www.youtube.com/watch?v=EA43S5R8LSc&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr
+
+Spring Core - Session-1
+https://www.youtube.com/watch?v=xusQhpQuODk&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=12
+Spring Core - Session-2 (Autowired)
+https://www.youtube.com/watch?v=-FlszP92JVM&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=13
+Autoconfiguration:
+Parent Project-> child Project
+
+Spring Boot Applications
+1. Starter class | main() class | bootstrap
+2. Input files (application.properties | application.yml)
+3. Build Information File (pom.xml | build.gradle)
+
+1. Starter class | main() class | bootstrap
+  create Spring container, start application.
+
+
+HAS-A Relation (Association Mapping):-
+-------------------------------------
+Using child(interface/class) as a DataType and creating variable 
+insided Parent(class) is called as HAS-A Relation.
+
+
+@Autowired :-
+This annotation is used to link parent object with child object.
+(Link HAS-A Variable with its type object).
+
+===========================================================
+Annotation Config: Programmer defined class
+   @Component
+   @Value
+   @Autowired
+
+Java Config : Pre-defined class (Core Java Style code)
+Q) Can we modify .class file in Java?
+A) No. It is not possible. We can read/decompile and can create 
+  new one.
+
+--Steps to write Java configuration--
+a. Write one public class with any name
+b. Apply one annotation over class: @Configuration
+c. No.of methods = no.of Objects
+d. Apply @Bean (object) over method
+
+@Configuration
+public class ________  {
+   @Bean
+   public  <className>  <objectName>() {
+     ...object creation logic..
+   }
+}
+-------------Ex-------------------------
+//consider pre-defined class
+class HikariConn {
+  String driver;
+  String url;
+}
+-Java Configuration code--
+@Configuration
+public class AppConfig {
+  @Bean
+  public HikariConn con() {
+     HikariConn c = new HikariConn();
+     c.setDriver("Oracle");
+     c.setUrl("jdbc:orcl");
+     return c;
+  }
+}
+
+Q) Can use Java Configuration for Programmer defined classes?
+A) YES, we can use. But not recomanded.
+   Code becomes lengthy. Use simple Annotation configuration.
+
+Q) Can we use Annotation Config for pre-defined classes?
+A) NO. Pre-defined class comes in .class format
+   that we can not modify.
+ 
+Best Approch:
+Annotation config : Programmer classes
+Java Config : Pre-defined classes.
+
+
+--Ex#2--------------------
+//consider pre-defined class
+class ExcelTemplate {
+  String file;
+  String sheet;
+}
+obj: et(file=ABC,sheet=ONE)
+
+*) If we miss @Bean that method behaves as unused.
+@Configuration
+public class AppConfig {
+  @Bean
+  public ExcelTemplate et() {
+    ExcelTemplate e = new ExcelTemplate();
+    e.setFile("ABC");
+    e.setSheet("ONE")
+    return e;
+  }
+}
+========Ex#3==========================
+//consider given class is pre-defined
+class ExportPool {
+  int code;
+  String mode;
+}
+--Java Configuration--
+@Configuration
+public class AppConfig {
+  @Bean
+  public ExportPool ep() {
+     ExportPool ep = new ExportPool();
+     ep.setCode(101);
+     ep.setMode("NIT");
+     return ep;
+  }
+}
+
+Q) What is @Component and @Bean ?
+A) @Component and @Bean both indicates creating object by Spring container.
+   @Component is used for Programmer defined class(.java code)
+   @Bean is used for pre-defined class (.class file)
+
+Q) What is @Component and @Configuration?
+A) Actually both are different.
+   @Configuration: This is a Configuration file that contains
+   object details which are to be created in Spring container.
+
+Q) Can we define multiple configuration files?
+A) YES. All are loaded by Spring container and object created.
+

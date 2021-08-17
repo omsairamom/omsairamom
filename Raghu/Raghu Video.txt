@@ -1,0 +1,20 @@
+
+Cloud Deployment:
+https://www.youtube.com/watch?v=QOwgiJWmZ9k&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=17
+
+Redis cache:
+#1
+https://www.youtube.com/watch?v=HBmlNMGh9O0&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=19
+#2
+https://www.youtube.com/watch?v=IwYEdZOmY6g&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=20
+
+JWT:
+https://www.youtube.com/watch?v=feETfZbvu-k&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=24
+
+JDBC:
+https://www.youtube.com/watch?v=9wCpMk1YXnc&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=31
+https://www.youtube.com/watch?v=-a2M-FN88bA&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=34
+
+Camel:
+https://www.youtube.com/watch?v=34TK-z9hw1c&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=45
+https://www.youtube.com/watch?v=UoUtPjsfjfU&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=47

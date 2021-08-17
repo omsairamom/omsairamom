@@ -1,0 +1,76 @@
+1) Java Object creation
+
+2) Multithreading / Syncronijation why
+
+3) Exception hierarchy
+
+4) Error class example
+
+5) Collection Hier
+
+List Creation type & Shorting Comprater and Comparible
+
+Collection.short on the basis of age
+
+Tree map & Map
+
+Spring Obj vs Java Obj
+
+@SpringBoot annotation
+
+@Autowire annotation
+
+============================================================================
+
+Spring Structure Code
+
+Spring Annotation 
+
+Get Mappting vs Get Request
+
+Post & UPDATE
+
+PATCH & UPDATE
+
+JOIN & SELF JOIN
+
+Clause & Group By
+
+Which DB use
+
+Security JWT and Spring Security
+
+CICD / Kubernetics
+
+Docker file creation
+
+=================================================================================
+
+
+
+unique char
+
+string reverse recursion
+
+hashset linked hashset
+
+interface abstract
+
+abstract method constructor
+
+binary search prerequsite
+
+
+
+bruteforce attack plugin  --  multiple time
+
+http anti-replay  -- API more then hit one time similar requesst already fired
+
+jwt token --
+
+wrong login attempt - temp login attempt blocked for 5 min save in aerospike ttl for storing data till time
+
+
+
+
+

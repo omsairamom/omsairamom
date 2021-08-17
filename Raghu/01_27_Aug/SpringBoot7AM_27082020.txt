@@ -1,0 +1,129 @@
+			 Date : 27-Aug-20
+			Spring Boot -Demo-1
+			  Mr. RAGHU
+	----------------------------------------------
+	 https://www.facebook.com/groups/thejavatemple/
+	   email: javabyraghu@gmail.com
+
+Videos:
+https://www.youtube.com/watch?v=EA43S5R8LSc&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr
+
+Spring Core Session-1
+ https://www.youtube.com/watch?v=xusQhpQuODk&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=12
+Spring Core Session-2
+ https://www.youtube.com/watch?v=-FlszP92JVM&list=PLVlQHNRLflP9XSWeY4x4FLwnL3UOIxnTr&index=13
+
+ Pre Req:
+  Core Java (Good) | Adv Java Basic |
+  Hibernate/JPA basics | Spring (Core, JDBC, MVC)
+
+ Spring Boot and Microservices(Spring Cloud)
+ hr@nareshit.com
+ Duration : 3 months
+ Session  : 1hr 40 min [ 7:10 AM IST  ]
+ NO RECORDED SESSION | NOTES PDF | EXAMPLE CODE [Workspace]
+ Payment : 5000 INR /- 
+ 
+ =================================================================
+   Spring Boot: It is a Spring based Parent Project Defined by Pivotal Team
+     that reduces Common setup and code[common things] ie called as
+     AutoConfiguration.
+
+
+  => Spring Boot is a Parent Project, our project is child project.
+  => Autoconfiguration reduces programmer work, Programmer project
+     is called as Child project.
+
+
+ --Database Connection--
+ JDBC:
+   Class.forName("___");
+   DriverManager.getConnection(,,);
+   ...
+
+ Spring :
+              HAS-A
+  JdbcTemplate ---<> DataSource(I)
+                          ^
+			  | IS-A
+                    DriverManagerDataSource
+
+  // Developer has to write this code
+  @Configuration
+  public class AppConfig {
+    @Bean
+    public DriverManagerDataSource ds(){
+      DriverManagerDataSource ds = new DriverManagerDataSource();
+      ds.setDriverClassName("_____");
+      ds.setUrl("____");
+      ds.setUsername("_____");
+      ds.setPassword("_____");
+      return ds;
+    }
+    @Bean
+    public JdbcTemplate jt(){
+      JdbcTemplate jt  = new JdbcTemplate();
+      jt.setDataSource(ds());
+      return jt;
+    }
+  }
+
+  spring-jdbc jar
+  spring-context jar
+  ..etc
+
+  Download and Install Database.
+  
+-----------------------------------------------------------
+  Spring Boot:
+    Autoconfiguration (classes, configuration, jars, 
+                    embedded support/install DB..etc)
+
+ Maven/Gradle
+   spring-boot-starter-jdbc (line)
+    60% code,
+   
+  inputs: [properties] (key=val) [Given by programmer]
+   spring.datasource.driver-class-name=_____
+   spring.datasource.url=________
+   spring.datasource.username=_______
+   spring.datasource.password=_________
+   
+   Pre-defined keys list:
+   https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+
+Q) What is starter (or)  Autoconfiguration in Spring Boot?
+A) Spring Boot has provided common setup and code files
+   that reduces programmer work, it is called as
+   starter (or)  Autoconfiguration.
+
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter
+
+======================================================================
+Embedded Database : InMemory database (3)
+ That works on RAM. 
+ These are good for Developer only | Never use in Production
+
+SQL
+ H2 Database
+ HSQL | Hyper SQL
+ Apache Derby
+
+NoSQL
+ Redis
+ MongoDB
+ 
+   
+External DB: Oracle DB -> Download DB + Install DB
+
+
+Embedded Servers: (3) [No Download + No Install]
+ Tomcat (Apache)
+ Jetty (Eclipse)
+ Undertow (JBoss)
+
+Java App Packing =>  jar/war/ear   [in Spring boot no EAR concept]
+  JAR = Java Archive 
+  WAR = Web Archive
+  EAR = Enterprie Archive
+-------------------------------------------------------------------

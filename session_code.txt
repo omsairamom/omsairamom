@@ -1,0 +1,154 @@
+package com.airtelbank.admin.filter;
+
+import com.airtelbank.admin.common.SnapWorkRequest;
+import com.airtelbank.admin.common.SnapWorkResponse;
+import com.airtelbank.admin.util.KibanaLoggerUtils;
+import com.google.gson.Gson;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
+@Component
+public class KibanaLoggingFilter extends OncePerRequestFilter {
+
+    private static Logger logger = LoggerFactory.getLogger(KibanaLoggingFilter.class);
+
+    @Autowired
+    KibanaLoggerUtils kibanaLoggerObj;
+
+    HashMap<String, Timestamp> timestampHashMap = new HashMap<>();
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException
+    {
+
+
+        final String requestTokenHeader = request.getHeader("x-access-token");
+        final String jwt_payload = request.getHeader("jwt_payload");
+
+        logger.info("requestTokenHeader {}:", jwt_payload);
+        logger.info("jwt_payload {}:", response.getHeader("jwt_payload"));
+        logger.info("requestTokenHeader1 {}:", requestTokenHeader);
+
+        try
+        {
+            setAuthentication("userName", request);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        //Step 1: Get data from HttpServletRequest
+        LocalDateTime requestTime = LocalDateTime.now();
+
+        final HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(request);
+        final HttpResponseWrapper httpResponseWrapper = new HttpResponseWrapper(response);
+
+        SnapWorkRequest snapWorkReques =
+                new Gson().fromJson(httpRequestWrapper.getRequestBody(), SnapWorkRequest.class);
+        boolean statusmsg = timeWalaKaam(timestampHashMap, snapWorkReques);
+
+        long startTime = System.currentTimeMillis();
+
+        //Step 2: Hit API
+        try
+        {
+            filterChain.doFilter(httpRequestWrapper, httpResponseWrapper);
+        }
+        finally
+        {
+
+            // Step 3: Print kibana
+            long endTime = System.currentTimeMillis();
+            long requestProcessingTime = endTime - startTime;
+
+            SnapWorkRequest snapWorkRequest =
+                    new Gson().fromJson(httpRequestWrapper.getRequestBody(), SnapWorkRequest.class);
+
+            SnapWorkResponse snapWorkResponse =
+                    new Gson().fromJson(httpResponseWrapper.getResponsePayload(), SnapWorkResponse.class);
+
+            kibanaLoggerObj.saveAdminWebKibanaLoggers(snapWorkRequest, snapWorkResponse, requestProcessingTime,
+                    request.getRequestURI());
+
+            if (statusmsg)
+            {
+                snapWorkResponse.setMessage("Session expired");
+            }
+        }
+    }
+
+    boolean timeWalaKaam(HashMap<String, Timestamp> timestampHashMap, SnapWorkRequest snapWorkRequest)
+    {
+        boolean sessionStatus = false;
+
+
+        Date date= new Date();
+        //getTime() returns current time in milliseconds
+        long time = date.getTime();
+        //Passed the milliseconds to constructor of Timestamp class
+        Timestamp ts = new Timestamp(time);
+
+        if(!timestampHashMap.containsKey(snapWorkRequest.getUserName()))
+        {
+            this.timestampHashMap.put(snapWorkRequest.getUserName(), ts);
+        }
+        else
+        {
+              Timestamp currentTimeStamp = ts;
+              Timestamp storedTimeStamp = timestampHashMap.get(snapWorkRequest.getUserName());
+
+              long timediff = currentTimeStamp.getTime() - storedTimeStamp.getTime();
+              long diffInMinutes = TimeUnit.MILLISECONDS.toMinutes(timediff);
+
+              System.out.println("Diff " + diffInMinutes+"");
+
+            if (timediff > 2)
+            {
+                System.out.println("Logout");
+
+                sessionStatus = true;
+            }
+            else
+            {
+                  timestampHashMap.put(snapWorkRequest.getUserName(), currentTimeStamp);
+            }
+        }
+
+        return sessionStatus;
+
+//        for(Map.Entry entry: this.timestampHashMap.entrySet())
+//        {
+//            System.out.println(entry.getKey() + " : " + entry.getValue());
+//        }
+    }
+
+
+    void setAuthentication(String username, HttpServletRequest request)
+    {
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User("username", "password",
+                new ArrayList<>());
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                userDetails, null, userDetails.getAuthorities());
+        usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+        SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+    }
+}

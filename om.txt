@@ -1,0 +1,169 @@
+Om Sai Ram
+
+Om Namah Shivaye
+
+A1SB1WJB
+X2_vpixf
+
+Zoom Account
+==========================
+ayushsa@hcl.com
+Gunjan099@
+
+northvpn.airtel.in 
+
+.\localit
+rp3.U&{h
+
+
+==========================================================
+
+
+https://automation.airtel.com/
+
+
+1800 102 3900
+
+Easy Access ID:	A1SB1WJB
+Password:	a{=1OTAN
+Owner Name:	Ayush Saxena
+Process Reference:	2998532796627952027
+Time of service provisioning:	Aug 26, 2020 12:43:04 IST
+BHPPS5529H
+
+460621 Password Raghu Meeting
+
+
+Latest Comp Letter
+
+
+
+https://jira.airtel.com/browse/APB-116808
+
+https://stackoverflow.com/questions/28647136/how-to-disable-x-frame-options-response-header-in-spring-security
+
+Duo OTP
+=====================================
+https://airtelmfa.airtel.com/dag/module.php
+
+=====================================
+SRK50ZS-S6 Mitsubishi Heavy Duty 
+=====================================
+
+https://betterjavacode.com/programming/http-security-headers-xframe-options-and-content-security-policies
+
+https://www.youtube.com/watch?v=CyAps-3q3aw
+https://www.youtube.com/watch?v=rlomZOmrETc
+
+--------------------------------------------------------
+https://www.youtube.com/watch?v=JhaNWFLYobY
+
+https://www.youtube.com/watch?v=s3WtA_XiBH4
+https://www.youtube.com/watch?v=arj7oStGLkU
+https://www.youtube.com/watch?v=SY0zGH_x2mY
+https://www.youtube.com/watch?v=02X6U81MdJ0
+
+https://www.youtube.com/watch?v=_aNpnB_4sHQ&t=1109s
+
+
+
+
+
+
+
+
+
+Location Path:
+sudo su -
+cd /opt/SPRINGBOOT/CombinedPromoterApp/Backend/Combined-Promoter-App-AdminPortal-Services/logs
+
+Production combined promoter app Log path on SIT server
+cd /opt/ SPRINGBOOT/CombinedPromoterApp/prod_log
+
+SIT Server Path
+=====================================================================================================
+cd /opt/SPRINGBOOT/CombinedPromoterApp/Backend/Combined-Promoter-App-AdminPortal-Services
+cd /opt/SPRINGBOOT/CombinedPromoterApp/Backend/Combined-Promoter-App-Services
+
+
+
+Command to check Running jars on Linux server
+=====================================================================================================
+ps -aux | egrep 'airtel-'
+
+./launcher.sh  airtel-app-services-0.2.3.jar
+
+tail -f 
+
+
+
+
+
+
+for exit insertmode :q
+
+
+
+Simple Vim workflow example#
+If you haven't had a chance to play around with Vim much yet, you might be wondering what a simple workflow looks like when using it. It's relatively simple:
+
+Open a new or existing file with vim filename.
+Type i to switch into insert mode so that you can start editing the file.
+Enter or modify the text with your file.
+Once you're done, press the escape key Esc to get out of insert mode and back to command mode.
+Type :wq to save and exit your file.
+Of course, there is so much more you can do with Vim, however as a beginner, the above steps are what a simple Vim workflow looks like.
+
+Summary
+
+
+
+
+Find Pradeep approval. Mapping required for
+
+10.56.110.175
+10.56.110.210
+
+
+https://mkyong.com/spring-boot/spring-boot-spring-data-jpa
+https://www.baeldung.com/spring-data-jpa-query
+
+Rajat Discussion
+=======================================================================
+
+10.56.110.175:443/des/encrypt
+https://apbuat.airtelbank.com/ret172/app-services/v1/users/user-login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
